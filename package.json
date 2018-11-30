@@ -1,0 +1,46 @@
+{
+  "name": "js-scss-gulp-boilerplate",
+  "version": "1.0.0",
+  "author": "Alex Lomia",
+  "description": "Simple Scss / Js boilerplate powered by Gulp",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexLomm/js-scss-gulp-boilerplate"
+  },
+  "homepage": "https://github.com/AlexLomm/js-scss-gulp-boilerplate",
+  "bugs": "https://github.com/AlexLomm/js-scss-gulp-boilerplate/issues",
+  "keywords": [
+    "boilerplate",
+    "html",
+    "scss",
+    "sass",
+    "js",
+    "gulp",
+    "front-end"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "gulp serve",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "webpack": "^4.12.0",
+    "webpack-stream": "^4.0.3",
+    "yargs": "^11.0.0"
+  }
+}
