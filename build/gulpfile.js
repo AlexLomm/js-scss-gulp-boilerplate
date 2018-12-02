@@ -59,8 +59,9 @@ gulp.task('serve', jobNames, () => {
     .on('change', browserSync.reload);
 
   browserSync.init({
-    server: config.server,
-    open: yargs.argv.open,
-    ghost: false,
+    server: yargs.argv.server || config.server,
+    open: yargs.argv.open || config.open,
+    ghost: yargs.argv.ghost || config.ghost,
+    port: yargs.argv.port || config.port,
   });
 });
