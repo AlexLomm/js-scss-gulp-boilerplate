@@ -61,7 +61,7 @@ gulp.task('serve', jobNames, () => {
   browserSync.init({
     server: yargs.argv.server || config.server,
     open: yargs.argv.open || config.open,
-    ghost: yargs.argv.ghost || config.ghost,
+    ghostMode: yargs.argv.ghostMode || config.ghostMode,
     port: yargs.argv.port || config.port,
   });
 });

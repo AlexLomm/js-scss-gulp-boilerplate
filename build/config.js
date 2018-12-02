@@ -2,7 +2,7 @@ module.exports = {
   server: '../',
   rootDir: '../',
   open: false,
-  ghost: false,
+  ghostMode: false,
   port: 3000,
   js: {
     app: {
