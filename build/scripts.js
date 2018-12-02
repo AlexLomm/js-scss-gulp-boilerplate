@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp          = require('gulp');
+const gulpIf        = require('gulp-if');
 const uglify        = require('gulp-uglify');
 const babel         = require('gulp-babel');
 const webpackStream = require('webpack-stream');
@@ -45,23 +46,17 @@ module.exports = (args = {}) => {
 
   function processJsFactory(entryFileName, outName) {
     return () => {
-      const stream = gulp.src(entryFileName)
+      return gulp.src(entryFileName)
         .pipe(webpackStream({
           mode: args.isDev ? 'development' : 'production'
         }, webpack))
         .pipe(babel({
           presets: ['env'],
           plugins: ['transform-object-rest-spread']
-        }));
-
-      if (!args.isDev) {
-        stream.pipe(uglify());
-      }
-
-      stream.pipe(concat(outName))
+        }))
+        .pipe(gulpIf(!args.isDev, uglify()))
+        .pipe(concat(outName))
         .pipe(gulp.dest(config.js.distDir));
-
-      return stream;
     };
   }
 };

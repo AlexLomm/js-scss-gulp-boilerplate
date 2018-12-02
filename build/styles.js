@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp         = require('gulp');
+const gulpIf       = require('gulp-if');
 const sass         = require('gulp-sass');
 const minifyCSS    = require('gulp-minify-css');
 const autoPrefixer = require('gulp-autoprefixer');
@@ -44,22 +45,13 @@ module.exports = (args = {}, browserSync) => {
 
   function processStylesFactory(entryFileName, outName) {
     return () => {
-      const stream = gulp.src(entryFileName)
+      return gulp.src(entryFileName)
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoPrefixer('last 2 versions'));
-
-      if (!args.isDev) {
-        stream.pipe(minifyCSS());
-      }
-
-      stream.pipe(concat(outName))
-        .pipe(gulp.dest(config.styles.distDir));
-
-      if (args.isDev) {
-        stream.pipe(browserSync.stream());
-      }
-
-      return stream;
+        .pipe(autoPrefixer('last 2 versions'))
+        .pipe(gulpIf(!args.isDev, minifyCSS()))
+        .pipe(concat(outName))
+        .pipe(gulp.dest(config.styles.distDir))
+        .pipe(gulpIf(args.isDev, browserSync.stream()));
     };
   }
 };
