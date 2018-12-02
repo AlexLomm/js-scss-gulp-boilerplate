@@ -1,6 +1,9 @@
 module.exports = {
   server: '../',
   rootDir: '../',
+  open: false,
+  ghost: false,
+  port: 3000,
   js: {
     app: {
       entryFile: '../src/js/app/index.js',
