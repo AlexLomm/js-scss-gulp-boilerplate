@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JS / SCSS / Gulp Boilerplate</title>
+  <title>JS / SCSS / Gulp Boilerplate</title>
 
-	<link rel="stylesheet" type="text/css" href="./dist/css/vendor.css">
-	<link rel="stylesheet" type="text/css" href="./dist/css/app.css">
+  <link rel="stylesheet" type="text/css" href="./dist/css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="./dist/css/app.css">
 </head>
 <body>
-	<h1>App works! :)</h1>
+  <h1>App works! :)</h1>
 
   <script type="text/javascript" src="./dist/js/vendor.js"></script>
   <script type="text/javascript" src="./dist/js/app.js"></script>
 
   <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.3'><\/script>".replace("HOST", location.hostname));
+  document.write('<script async src="http://HOST:PORT/browser-sync/browser-sync-client.js?v=2.26.3"><\/script>'
+    .replace('HOST', location.hostname)
+    .replace('PORT', location.port)
+  );
   //]]></script>
 </body>
 </html>
