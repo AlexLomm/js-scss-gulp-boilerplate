@@ -1,6 +1,6 @@
 {
   "name": "js-scss-gulp-boilerplate",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "Alex Lomia",
   "description": "Simple Scss / Js boilerplate powered by Gulp",
   "main": "index.js",
